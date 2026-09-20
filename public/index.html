@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="brand">
+        <div class="app-name">API Dashboard</div>
+        <div class="subtitle">Internal User Records System</div>
+      </div>
+      <div class="connection" aria-live="polite">
+        <span class="connection-dot" aria-hidden="true"></span>
+        <span id="connection-status">API Connected</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="stats-bar" aria-label="User statistics">
+        <article class="stat-card">
+          <span class="stat-number" id="stat-total">—</span>
+          <span class="stat-label">Total Users</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-number" id="stat-active">—</span>
+          <span class="stat-label">Active Users</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-number" id="stat-inactive">—</span>
+          <span class="stat-label">Inactive Users</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-number" id="stat-departments">—</span>
+          <span class="stat-label">Departments</span>
+        </article>
+      </section>
+
+      <section id="table-section" aria-labelledby="table-heading">
+        <div class="table-card">
+          <div class="toolbar">
+            <h1 id="table-heading">User Records</h1>
+            <button id="refresh-btn" type="button">Refresh Data</button>
+          </div>
+          <div id="error-message" role="alert"></div>
+          <div class="table-scroll">
+            <table id="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Joined</th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>api-dashboard v1.0.0</span>
+      <span>Last updated: <span id="last-updated">—</span></span>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
