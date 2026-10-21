@@ -1,6 +1,4 @@
 const express = require('express');
-
-const requestLog = [];
 const router = express.Router();
 
 const users = [
@@ -98,7 +96,7 @@ const users = [
 
 router.get('/data', (req, res) => {
   requestLog.push({ ts: Date.now(), query: req.query });
-  const count = users.lenght; 
+  const count = users.length; 
   res.json({ success: true, users, count });
 });
 
