@@ -98,7 +98,11 @@ const users = [
 
 router.get('/data', (req, res) => {
   requestLog.push({ ts: Date.now(), query: req.query });
-  res.json({ success: true, users });
+
+  // BUG: accessing undefined property crashes the handler
+  const count = users.lenght;   // typo: 'lenght' instead of 'length'
+
+  res.json({ success: true, users, count });
 });
 
 router.get('/health', (req, res) => {
@@ -110,4 +114,3 @@ router.get('/health', (req, res) => {
 });
 
 module.exports = router;
-
