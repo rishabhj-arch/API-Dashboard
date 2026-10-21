@@ -98,10 +98,7 @@ const users = [
 
 router.get('/data', (req, res) => {
   requestLog.push({ ts: Date.now(), query: req.query });
-
-  // BUG: accessing undefined property crashes the handler
-  const count = users.lenght;   // typo: 'lenght' instead of 'length'
-
+  const count = users.lenght; 
   res.json({ success: true, users, count });
 });
 
